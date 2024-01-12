@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conceitos de Variaveis Root</title>
+    <style>
+      /* 
+        ao colocar :root {} tudo que vai dentro das chaves com dois tracinhos no começo, exemplo: --white,
+        é considerado uma variável para o css
+        então quando declarado dentro do root, o sistema todo consegue ter acesso a essa variavel
+      */
+      :root {
+        --blue: blue;
+      }
+
+      .titulo {
+        color: var(--blue);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="titulo">Conceito de Root</h1>
+  </body>
+</html>

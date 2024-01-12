@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conceitos de Sobrescrita de variaveis ROOT</title>
+    <style>
+      :root {
+        --minha-variavel-root: blue;
+      }
+      .titulo {
+        --minha-variavel-local: red; /* variavel local */
+        /* aqui eu to sobrescrevendo localmente minha variavel root */
+        --minha-variavel-root: yellow;
+        color: var(--minha-variavel-local);
+        border: 1px solid var(--minha-variavel-root);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="titulo">Variavel Local</h1>
+  </body>
+</html>

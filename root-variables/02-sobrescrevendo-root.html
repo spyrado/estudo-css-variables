@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conceitos de Sobrescrita de variaveis ROOT</title>
+    <style>
+      /* 
+        para sobrescrever variaveis root existem 3 formas: 
+          1 - NÃO RECOMENDADA: uma é no proprio root você declarar a mesma variavel como outro nome ( oq não é NADA Recomendado, eu consideraria isso um bug)
+          2 - NÃO RECOMENDADA: criar outro :root em algum outro lugar da aplicação que esteja abaixo do primeiro root, isso também sobrescreveria ( oq não é NADA Recomendado, eu consideraria isso um bug)
+          3 - RECOMENDADA: crie uma classe aonde vc precisa estilizar aquele elemento, e dentro dessa classe coloque o mesmo nome de variavel que esse titulo está
+            utilizando, 
+
+      */
+      :root {
+        --blue: blue;
+        /* --blue: green; forma 2 */
+      }
+
+      :root {
+        /* --blue: red; forma 1 */
+      }
+
+      .titulo {
+        color: var(--blue);
+      }
+
+      /* 
+        forma 3
+        fazendo dessa forma, isolamos a sobrescrita de uma variável apenas para elementos que utilizarem
+          a classe sobresceve-titulo
+      */
+      .sobrescreve-titulo {
+        --blue: purple;
+        color: var(--blue);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="titulo">Conceito de Root</h1>
+    <h1 class="titulo sobrescreve-titulo">Sobrescrevendo Root localmente</h1>
+  </body>
+</html>
